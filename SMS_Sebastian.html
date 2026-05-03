@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Mensajes">
+  <title>Mensajes</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: -apple-system, "SF Pro Text", "Helvetica Neue", sans-serif;
+      background: #f2f2f7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* STATUS BAR */
+    .status-bar {
+      background: #f2f2f7;
+      padding: 14px 20px 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 15px;
+      font-weight: 600;
+      color: #000;
+    }
+
+    .status-time {
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .status-icons {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    /* NAVIGATION BAR */
+    .nav-bar {
+      background: #f2f2f7;
+      padding: 4px 16px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 0.5px solid #c6c6c8;
+    }
+
+    .nav-back {
+      color: #007aff;
+      font-size: 17px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .nav-back svg {
+      width: 10px;
+      height: 18px;
+    }
+
+    .nav-contact {
+      text-align: center;
+      flex: 1;
+    }
+
+    .nav-contact-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #8e8e93;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2px;
+      font-size: 14px;
+      font-weight: 600;
+      color: white;
+    }
+
+    .nav-contact-name {
+      font-size: 12px;
+      font-weight: 500;
+      color: #000;
+    }
+
+    .nav-action {
+      color: #007aff;
+      font-size: 17px;
+    }
+
+    /* MESSAGES AREA */
+    .messages-area {
+      flex: 1;
+      padding: 12px 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .date-label {
+      text-align: center;
+      font-size: 12px;
+      color: #8e8e93;
+      margin: 8px 0 12px;
+      font-weight: 400;
+    }
+
+    /* SMS bubble — grey (received) */
+    .bubble-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 80%;
+    }
+
+    .bubble {
+      background: #e5e5ea;
+      color: #000;
+      border-radius: 18px 18px 18px 4px;
+      padding: 10px 14px;
+      font-size: 16px;
+      line-height: 1.4;
+      word-break: break-word;
+    }
+
+    .bubble-time {
+      font-size: 11px;
+      color: #8e8e93;
+      margin-top: 4px;
+      padding-left: 4px;
+    }
+
+    /* INPUT BAR */
+    .input-bar {
+      background: #f2f2f7;
+      border-top: 0.5px solid #c6c6c8;
+      padding: 8px 12px 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .input-field {
+      flex: 1;
+      background: #fff;
+      border: 1px solid #c6c6c8;
+      border-radius: 20px;
+      padding: 8px 14px;
+      font-size: 16px;
+      color: #8e8e93;
+      font-family: -apple-system, sans-serif;
+    }
+
+    .input-icon {
+      color: #8e8e93;
+      font-size: 22px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- STATUS BAR -->
+  <div class="status-bar">
+    <span class="status-time">23:40</span>
+    <div class="status-icons">
+      <span>●●●●</span>
+      <span>WiFi</span>
+      <span>🔋</span>
+    </div>
+  </div>
+
+  <!-- NAV BAR -->
+  <div class="nav-bar">
+    <div class="nav-back">
+      <svg viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 1L1 9L9 17" stroke="#007aff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      &nbsp;Mensajes
+    </div>
+    <div class="nav-contact">
+      <div class="nav-contact-avatar">SL</div>
+      <div class="nav-contact-name">Sebastian Lorne</div>
+    </div>
+    <div class="nav-action">⋯</div>
+  </div>
+
+  <!-- MESSAGES -->
+  <div class="messages-area">
+    <div class="date-label">Hoy 23:40</div>
+    <div class="bubble-wrapper">
+      <div class="bubble">
+        Ariel, estoy bien. Estoy fuera con Daniel. Hemos tenido una larga charla y por fin está todo controlado. Ya te lo explicaré. Oliver estaba algo mareado, era lo que intentaba decirte cuando te llamé. Aunque conociéndote seguro que ya te has ocupado de él y de los invitados. Discúlpame ante ellos. Cancela mis compromisos de mañana; Oliver y yo necesitamos resolver varios asuntos urgentes. Voy ya de camino.
+      </div>
+      <div class="bubble-time">23:40</div>
+    </div>
+  </div>
+
+  <!-- INPUT BAR -->
+  <div class="input-bar">
+    <span class="input-icon">📷</span>
+    <div class="input-field">Mensaje de texto</div>
+    <span class="input-icon">🎤</span>
+  </div>
+
+</body>
+</html>
